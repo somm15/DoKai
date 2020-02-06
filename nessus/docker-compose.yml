@@ -5,7 +5,7 @@ services:
     image: stevemcgrath/nessus_scanner
     environment: 
       - "ADMIN_PASS=admin"
-      - "LICENSE=AEFB-7541-D3AD-5819-AEE7"
+      - "LICENSE=XXXX-XXXX-XXXX-XXXX-XXXX"
     volumes:
       - "nessus_etc:/etc"
       - "nessus_var:/var"
@@ -14,4 +14,3 @@ services:
 volumes:
     nessus_etc:
     nessus_var:
-
