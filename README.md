@@ -1,2 +1,2 @@
 # DoKai
-Red Ninja Docker images
+Red Ninja Docker images for Red Teamers
