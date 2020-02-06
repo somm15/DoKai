@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  responder:
+    image: responder:latest
+    restart: unless-stopped
+    # network mode is not supported on OSX
+    # change this to expose ports
+    # network_mode: host
+    ports:
+       - 80:80/tcp
+       - 443:443/tcp
+       - 53:53/tcp
+    command: ["python","Responder.py","-v","-P","-w","-d","-r","-f","-F","-I","eth0","-b"]
+    volumes:
+       - ./Responder.conf:/Responder/Responder.conf
+       - ./logs:/Responder/logs
+       - ./index.html:/Responder/files/index.html

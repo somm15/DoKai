@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+  gnuradio: 
+    image: gnuradio:latest
+    user: "${UID_DKR}:${GID_DKR}"
+    volumes:
+      - "/home/$USER_DKR:/home/$USER_DKR"
+      - "/etc/group:/etc/group:ro"
+      - "/etc/passwd:/etc/passwd:ro"
+      - "/etc/shadow:/etc/shadow:ro"
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+      - "$HOME/.Xauthority:/root/.Xauthority:rw"
+      - "/dev/snd/:/dev/snd/"
+    network_mode: "host"
+    devices:
+      - "/dev/snd"
+    environment:
+      DISPLAY:

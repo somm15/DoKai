@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+  nessus: 
+    image: stevemcgrath/nessus_scanner
+    environment: 
+      - "ADMIN_PASS=admin"
+      - "LICENSE=AEFB-7541-D3AD-5819-AEE7"
+    volumes:
+      - "nessus_etc:/etc"
+      - "nessus_var:/var"
+    network_mode: "host"
+
+volumes:
+    nessus_etc:
+    nessus_var:
+
